@@ -1,0 +1,666 @@
+@import "fonts"
+// @import "libs"
+@import "vars"
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+h1,h2,h3
+	font-family: $gotham
+
+h2
+	font-size: 4.6em
+	color: $accent
+	position: relative
+	line-height: 1.24
+
+ul,
+p,
+li
+	margin: 0
+	padding: 0
+	list-style: none
+a
+	color: inherit
+	text-decoration: none
+	&:hover
+		color: inherit
+		text-decoration: none
+
+body
+	min-width: 320px
+	position: relative
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 1
+	background: #FFF
+	+css-lock(16, 50, 600, 1000)
+	line-height: 1.4
+	margin: 0
+	font-size: 16px
+
+.player .sidedock
+	display: none!important
+
+.btn
+	width: 120px
+	height: 120px
+	border-radius: 50%
+	border: 0
+	cursor: pointer
+	outline: none
+	z-index: 99
+	background: #510ac0
+	i
+		background: url(../img/head-icon.png) no-repeat 7px -5px 
+		width: 65px
+		height: 60px
+		display: block
+		margin: 0 auto
+
+.side-menu
+	position: fixed
+	top: 47%
+	right: 10px
+	bottom: 0
+	width: 22px
+	display: table
+	background: transparent
+	z-index: 99
+	nav
+		display: table-cell
+		vertical-align: middle
+		li
+			padding: 7px 0
+			font-size: 1.6rem
+			line-height: 20px
+			a
+				display: block
+				position: relative
+				color: #fff
+				&:after
+					display: block
+					width: 16px
+					height: 16px
+					border-radius: 50%
+					border: 2px solid #fff
+					transition: 1s
+				span
+					display: block
+					position: absolute
+					right: 33px
+					transition: 1s
+					opacity: 0.4
+					transform: translate3d(25px, 0, 0)
+					width: 30px
+					background: #09ff8c
+					height: 3px
+					font-size: 0
+.side-menu
+	nav
+		li.active
+			a
+				&:after
+					background: #fff
+				span
+					visibility: visible
+					opacity: 1;
+					width: 50px
+					transform: translate3d(0, 0, 0)
+					font-size: 10px
+					color: #666
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.wrap__page
+	max-width: 1840px
+	margin: 0 auto
+	padding: 0 2%
+	font-size: 16px
+	position: relative
+
+.out
+	position: relative
+
+.section
+	height: 100vh
+	text-align: center
+	transition: all 0.2s linear
+	color: #fff  
+	background-position: 50% 50%
+	background-repeat: no-repeat  
+	background-size: cover
+	position: relative
+	overflow: hidden
+	z-index: 999
+	#homescreen_video
+		background-size: cover
+		transform: translate(-50%, -50%)
+		transition: 1s opacity
+		width: auto
+		height: auto
+		left: 50%
+		min-width: 100%
+		min-height: 100%
+		position: absolute
+		top: 50%
+		z-index: -100
+	.over
+		background: linear-gradient(to right, #330e75 , #5509ca)
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%  
+		z-index: 9
+		transform: translate(100%,0)
+	.wrap__page
+		display: flex
+		flex-direction: column
+
+.header-top
+	font-size: 16px
+	padding: 4% 0 0
+	position: relative
+	z-index: 9999999
+	display: flex
+	justify-content: space-between
+	align-items: center
+	.header-menu
+		font-size: 0px
+		display: flex
+		color: #fff
+		align-items: center
+		.menu-item
+			font-size: 24px
+			padding: 0 20px
+			cursor: pointer
+			position: relative
+			overflow: hidden
+			padding-bottom: 5px
+			&:before
+				content: ''
+				width: 100%
+				height: 3px
+				background: #510ac0
+				position: absolute
+				bottom: 0
+				left: 0
+				transition: .5s
+				transform: translate(-105%, 0)
+			&:hover
+				&:before
+					transform: translate(0, 0)
+.header-sub
+	display: flex
+	justify-content: space-between
+	align-items: center
+	position: relative
+	z-index: 99
+	padding: 15% 0px
+	.sub-title
+		position: relative
+		h1
+			font-size: 4.1em
+		p
+			font-size: 2.7em
+			position: relative
+			&:before
+				width: 64px
+				height: 2px
+				background: #fff
+				position: absolute
+				top: 0
+				left: 0
+				content: ''
+		.icon-scroll
+			display: block
+			width: 35px
+			height: 75px
+			background: url(../img/head-icon.png) no-repeat -68px -1px
+			position: absolute
+			bottom: -100%
+			right: 35%
+			animation: move 10s infinite
+
+	.btn-container
+		margin-right: 23%
+		p
+			font-size: 24px
+.trigger
+	display: none
+
+.iziModal-overlay
+	z-index: 9999!important
+
+.frame
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 9999999
+
+.under
+	height: 100vh
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	transform: scale(0)
+	z-index: 999
+	.under-container
+		margin: 0 auto
+		position: relative
+		.btn-close
+			position: absolute
+			top: 20px
+			left: 20px
+			width: 40px
+			height: 40px
+			z-index: 999
+			background: url(../img/close.png) no-repeat
+		.under-video
+			padding-bottom: 52.25%
+			position: relative
+			height: 0
+			background: #000
+			.embed-content
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+.loader
+	background: #000
+	position: absolute
+	top: 0
+	bottom: 0
+	left: 0
+	z-index: 9999999999
+
+.st0
+	fill: #fff
+
+// begin style for development
+
+.development
+	padding: 5% 0 0
+	position: relative
+	.wrap__page
+		h2
+			font-size: 4.6em
+			&:after
+				content: 'Миссия компании'
+				position: absolute
+				top: 170px
+				right: -3%
+				color: #ebe8f2
+				font-size: 1.7em
+	.development-inner
+		background: #180a2b
+		padding: 6% 0 100px 5px
+		position: relative
+		top: 48px
+		width: 90%
+		.wrap__page
+			color: #fff
+			.development-container
+				display: flex
+				justify-content: space-around
+				flex-wrap: wrap
+				position: relative
+				z-index: 0
+				.development-item
+					display: flex
+					flex-direction: column
+					align-items: center
+					font-size: 24px
+					position: relative
+					z-index: 999
+					padding: 0 10px
+					&:after
+						content: ''
+						height: 43px
+						width: 100%
+						background: #5509cb
+						position: absolute
+						bottom: 48px
+						left: 0
+						z-index: -1
+					&:before
+						content: ''
+						width: 63px
+						height: 1px
+						background: #fff
+						position: absolute
+						bottom: 49px
+						left: -80px
+
+					img
+						width: 81px
+						height: 93px
+						z-index: 2
+					p
+						margin-top: 26px
+				.item__third
+					flex-basis: 10%
+			.sub-title
+				margin-top: 42px
+				h3
+					font-size: 3.4em
+					span
+						font-family: $default-font
+						font-size: 0.8em
+						color: #ebe8f2
+						display: block
+						margin-top: 23px
+// end style for  development
+// begin style for product
+.product
+	padding: 25% 0 0
+	background: url(../img/bg.png) top center
+	background-size: cover
+	display: flex
+	align-items: flex-end
+	justify-content: space-between
+	background-attachment: fixed
+	.product-screen
+		height: 1095px
+		width: 50%
+		flex-grow: 1
+		background: url(../img/Screen-2.png) no-repeat center
+		background-size: cover
+	.product-info
+		width: 50%
+		flex-grow: 1
+		background: url(../img/product-screen-bg.png) no-repeat top center
+		background-size: cover
+		padding: 135px 0 160px 4%
+		color: #fff
+		position: relative
+		top: 100px
+		h3
+			font-size: 1em
+			margin: 0
+			line-height: 1.2
+			span
+				color: #09ff8c
+		p
+			font-size: 0.845em
+			margin: 7% 0 7%
+		ul
+			li
+				font-size: 0.48em
+				margin-bottom: 23px
+				line-height: 1.2
+		.btn__more
+			position: relative
+			display: inline-block
+			width: 45%
+			height: 74px
+			background: #09ff8c
+			line-height: 74px
+			text-align: center
+			display: block
+			border-radius: 5px
+			color: #000
+			font-size: 32px
+			cursor: pointer
+			margin-top: 9%
+			transition: all .5s ease
+			&:hover
+				transform: scale(1.02,1.1)
+				background: darken(#09ff8c, 10%)
+			&:active
+				transform: scale(1,1)
+				box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.0 )
+				background: #09ff8c
+// end style for product
+// begin style for business
+.business
+	position: relative
+	padding: 3% 0 10%
+	&:after
+		content: 'И это еще далеко не все…'
+		position: absolute
+		left: 4%
+		bottom: -41px
+		color: #ebe8f2
+		font-size: 2.5em
+		font-family: $gotham
+	.wrap__page
+		ul
+			margin-top: 100px
+			display: flex
+			justify-content: space-between
+			height: 275px
+			font-size: 1.5em
+			span
+				position: relative
+				&:nth-child(3), &:nth-child(7)
+					align-self: flex-end
+					&:after
+						height: 915px
+						top: -885px
+				&:nth-child(9)
+					&:after
+						height: 730px
+				&:after
+					content: ''
+					width: 1px
+					height: 700px
+					background: #d0cbd9 
+					position: absolute
+					top: -635px
+					left: 25px
+					z-index: -1
+			li
+				flex-basis: 15%
+				&:nth-child(4), &:nth-child(8)
+					align-self: flex-end
+// end style for business
+// begin style for together
+.together
+	padding: 5% 0
+	background: #231b2e
+	position: relative
+	.wrap__page
+		h2,p
+			margin: 0 0 18px
+			color: #ebe8f2
+		p
+			font-size: 31px
+// end style for together
+// begin style for screen
+.screen
+	padding: 5% 0
+	height: 75vh
+	width: 100%
+	background: url(../img/screen-bg.png) no-repeat top center
+	background-size: contain
+
+.main-footer
+	background: rgb(47, 15, 106)
+	padding: 50px 0
+	.wrap__page
+		text-align: center
+		p
+			font-size: 24px
+			color: #fff
+		.social
+			display: flex
+			justify-content: center
+			margin-top: 30px
+			a
+				width: 50px
+				height: 50px
+				background: url(../img/icon-footer.png) -5px -4px
+				transition: .3s
+				&:hover
+					background-position: -63px -4px
+				&:nth-child(2)
+					background-position: -122px -63px
+					margin: 0 20px
+					&:hover
+						background-position: -65px -63px
+				&:nth-child(3)
+					background-position: -122px -4px
+					&:hover
+						background-position: -182px -63px
+.toggle_mnu
+	display: none
+	width: 60px
+	height: 60px
+	position: fixed
+	top: 30px
+	z-index: 100
+	border: none
+	background-color: #5409c9
+	right: 20px
+.toggle_mnu
+	&:hover
+		cursor: pointer
+
+.sandwich
+	width: 34px
+	height: 34px
+	position: absolute
+	top: 15px
+	bottom: 0
+	left: 0
+	right: 0
+	margin: auto
+	z-index: 200
+.sw-topper
+	position: relative
+	top: 0
+	width: 34px
+	height: 3px
+	background: white
+	border: none
+	border-radius: 4px 4px 4px 4px
+	transition: top 0.2s
+	transition:transform 0.5s, top 0.2s
+	transition:transform 0.5s, top 0.2s
+	transition-delay: 0.2s, 0s
+.sw-bottom
+	position: relative
+	width: 34px
+	height: 3px
+	top: 6px
+	background: white
+	border:none
+	border-radius: 4px 4px 4px 4px
+	transition: top 0.2s, -webkit-transform 0.5s
+	transition: transform 0.5s, top 0.2s
+	transition: transform 0.5s, top 0.2s, -webkit-transform 0.5s
+	transition-delay: 0.2s, 0s
+.sw-footer
+	position: relative
+	width: 34px
+	height: 3px
+	top: 12px
+	background: white
+	border: none
+	border-radius: 4px 4px 4px 4px
+	transition: all 0.5s
+	transition-delay: 0.1s
+.sandwich.active .sw-topper
+	top: 8px
+	transform: rotate(140deg)
+.sandwich.active .sw-bottom
+	top: 5px
+	transform: rotate(-140deg)
+.sandwich.active .sw-footer
+	opacity: 0
+	top: 0
+	transform: rotate(180deg)
+
+.top_mnu
+	position: fixed
+	width: 100%
+	height: 100%
+	background-color: rgba(0, 0, 0, 0.8);
+	z-index: 50
+	right: 0
+	top: 0
+	display: none
+.top_mnu ul,
+.top_mnu li
+	list-style-type: none
+	padding: 0
+	margin: 0
+.top_mnu ul
+	margin-top: 180px
+	text-align: center
+.top_mnu 
+	ul 
+		li
+			&:nth-child(1) 
+				a
+					animation-duration: 0.5s
+.top_mnu 
+	ul 
+		li
+			&:nth-child(2) 
+				a
+					animation-duration: 1s
+.top_mnu 
+	ul 
+		li
+			&:nth-child(3) 
+				a
+					animation-duration: 1.5s
+.top_mnu 
+	ul 
+		li
+			&:nth-child(4) 
+				a
+					animation-duration: 2s
+.top_mnu 
+	ul 
+		a
+			color: #fff
+			display: block
+			padding: 20px 0
+			text-transform: uppercase
+			font-size: 15px
+			font-weight: bold
+			transition: all 0.7s ease
+			letter-spacing: 4px
+.top_mnu 
+	ul
+		a
+			&:hover
+				color: #008BBF
+				background-color: rgba(255, 255, 255, 0.2)
+
+
+// style for loader
+// end style for screen
+@import "media" // Всегда в конце
